@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 24px 24px;
+    background: radial-gradient(circle at top left, #e0e7ff, transparent 55%),
+        linear-gradient(135deg, #f8fafc, #ede9fe);
+    color: #292442;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.cabecalho {
+    width: 100%;
+    max-width: 800px;
+    margin-top: auto;
+}
+
+/* Uma pequena ilustração para acompanhar o tema do concurso. */
+.cabecalho::before {
+    content: "🧦";
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 28px;
+    border: 1px solid #d8d1ef;
+    border-radius: 28px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 32px #43387812;
+    font-size: 48px;
+    transform: rotate(-8deg);
+}
+
+.cabecalho h1 {
+    margin-bottom: 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.cabecalho > p {
+    max-width: 540px;
+    margin: 0 auto;
+    color: #5c5572;
+    font-size: 1.1rem;
+}
+
+main {
+    width: 100%;
+    max-width: 540px;
+    margin: 36px 0 64px;
+}
+
+.inscricao {
+    padding: 28px;
+    border: 1px solid #ded8ee;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 16px 40px #4338780d;
+    color: #5c5572;
+}
+
+.inscricao a {
+    display: block;
+    margin-top: 18px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    background-color: #6546ad;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.inscricao a:hover {
+    background-color: #50358e;
+    transform: translateY(-2px);
+}
+
+.inscricao a:focus-visible {
+    outline: 3px solid #50358e;
+    outline-offset: 4px;
+}
+
+.rodape {
+    width: 100%;
+    max-width: 800px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #d8d1e8;
+    color: #655e77;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 36px 20px 20px;
+    }
+
+    .inscricao {
+        padding: 22px 18px;
+    }
+
+    main {
+        margin-bottom: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inscricao a {
+        transition: none;
+    }
+
+    .inscricao a:hover {
+        transform: none;
+    }
+}

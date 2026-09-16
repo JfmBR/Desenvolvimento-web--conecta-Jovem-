@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição | Concurso de Poemas — Meias Perdidas</title>
+    <link rel="stylesheet" href="../assets/css/inscricao.css">
+    <script src="../assets/js/inscricao.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/fundo.css">
+</head>
+<body>
+    <div class="meias-flutuantes" aria-hidden="true">
+        <span>🧦</span><span>🧦</span><span>🧦</span><span>🧦</span>
+        <span>🧦</span><span>🧦</span><span>🧦</span><span>🧦</span>
+    </div>
+    <header>
+        <h1>Concurso de Poemas</h1>
+        <p>Meias Perdidas na Lavanderia</p>
+    </header>
+
+    <main>
+        <!-- Configure o action com o endereço do serviço que receberá as inscrições.
+             O envio ainda não está integrado; method="post" sozinho não salva os dados. -->
+        <form id="formulario-inscricao" method="post" aria-label="Inscrição no concurso de poemas">
+            <p>Todos os campos são obrigatórios.</p>
+            <div id="cima">
+                <div class="grupo-input">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" name="nome" id="nome" autocomplete="name" required>
+                </div>
+                <div class="grupo-input">
+                    <label for="contato">E-mail</label>
+                    <input type="email" name="email" id="contato" autocomplete="email" placeholder="seu-email@gmail.com" required>
+                </div>
+            </div>
+
+            <div class="grupo-input campo-poema">
+                <label for="texto-poema">Seu poema</label>
+                <textarea name="poema" id="texto-poema" rows="6" cols="30" placeholder="Escreva seu poema aqui" required></textarea>
+            </div>
+
+            <fieldset id="baixo">
+                <legend>Categoria</legend>
+                <label for="geral">Geral</label>
+                <input type="radio" name="categoria" id="geral" value="geral" required>
+                <label for="infantil">Infantil</label>
+                <input type="radio" name="categoria" id="infantil" value="infantil" required>
+            </fieldset>
+
+            <button type="submit" id="botao">Enviar</button>
+            <a href="../index.html" target="_blank" rel="noopener noreferrer">Voltar à página inicial</a>
+        </form>
+    </main>
+
+    <dialog id="confirmacao-envio" aria-labelledby="titulo-confirmacao" aria-describedby="mensagem-confirmacao">
+        <h2 id="titulo-confirmacao">Envio demonstrativo concluído!</h2>
+        <p id="mensagem-confirmacao">Seu poema passou pela validação do formulário. Esta é uma demonstração: o poema ainda não foi enviado nem salvo.</p>
+        <button type="button" id="fechar-confirmacao" autofocus>Entendi</button>
+    </dialog>
+</body>
+</html>

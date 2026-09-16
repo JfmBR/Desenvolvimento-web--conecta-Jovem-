@@ -1,0 +1,116 @@
+:root {
+    color-scheme: dark;
+    --fundo: #09111f;
+    --painel: #111c2f;
+    --borda: #263652;
+    --texto: #eef4ff;
+    --suave: #9fb0ca;
+    --destaque: #65d6ad;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--texto);
+    background: radial-gradient(circle at top, #182a47 0, var(--fundo) 48%);
+}
+
+.container {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 64px 0;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.etiqueta {
+    color: var(--destaque);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 8px 0 12px;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+header p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--suave);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.aulas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+section {
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: rgb(17 28 47 / 92%);
+    box-shadow: 0 18px 45px rgb(0 0 0 / 18%);
+}
+
+h2 {
+    margin: 0 0 18px;
+    font-size: 1.2rem;
+}
+
+ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: var(--texto);
+    background: rgb(255 255 255 / 5%);
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+}
+
+a::after {
+    color: var(--destaque);
+    content: "\2192";
+}
+
+a:hover,
+a:focus-visible {
+    background: rgb(101 214 173 / 14%);
+    transform: translateY(-2px);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+footer {
+    margin-top: 36px;
+    color: var(--suave);
+    text-align: center;
+    font-size: .9rem;
+}

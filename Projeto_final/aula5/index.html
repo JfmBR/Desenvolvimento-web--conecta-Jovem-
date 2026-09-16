@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo clique jogo</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header class="topo">
+        <h1>Jogo Clique e Colete</h1>
+        <p>Clique nos bolas para conseguir pontuar</p>
+    </header>
+
+    <section class="painel" aria-label="Painel do jogo">
+        
+        <div class="placar" aria-live="polite">
+            Pontos: <span id="pontos">0</span>
+        </div>
+
+        <div class="tempo" aria-live="polite">
+            Tempo <span id="tempo">30</span>s
+        </div>
+
+        <div class="controles">
+            <button class="btn" id="btnIniciar">Iniciar</button>
+
+            <button class="btn" id="btnReiniciar">Reiniciar</button>
+        </div>
+    </section>
+
+    <main class="area-jogo" id="areaJogo" role="application" tabindex="0" aria-label="Área de jogo">
+
+    </main>
+
+    <footer class="rodape">
+        <p>Tema personalizável: troque imagem no <code>style.css</code> e ajuste tempo/velocidade no <code>config.js</code></p>
+    </footer>
+    <script src="config/config.js"></script>
+</body>
+</html>

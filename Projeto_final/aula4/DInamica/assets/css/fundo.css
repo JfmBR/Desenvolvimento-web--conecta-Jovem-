@@ -1,0 +1,55 @@
+/* Camada decorativa compartilhada pelas duas páginas. */
+body {
+    isolation: isolate;
+}
+
+.meias-flutuantes {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.meias-flutuantes span {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    opacity: 0.16;
+    animation: flutuar var(--duracao) ease-in-out infinite alternate;
+    animation-delay: var(--atraso);
+}
+
+.meias-flutuantes span:nth-child(1) { --x: 5%; --y: 15%; --duracao: 9s; --atraso: -3s; }
+.meias-flutuantes span:nth-child(2) { --x: 85%; --y: 10%; --duracao: 12s; --atraso: -8s; }
+.meias-flutuantes span:nth-child(3) { --x: 16%; --y: 48%; --duracao: 11s; --atraso: -5s; }
+.meias-flutuantes span:nth-child(4) { --x: 90%; --y: 52%; --duracao: 10s; --atraso: -2s; }
+.meias-flutuantes span:nth-child(5) { --x: 6%; --y: 82%; --duracao: 13s; --atraso: -7s; }
+.meias-flutuantes span:nth-child(6) { --x: 78%; --y: 85%; --duracao: 9s; --atraso: -6s; }
+.meias-flutuantes span:nth-child(7) { --x: 44%; --y: 6%; --duracao: 14s; --atraso: -4s; }
+.meias-flutuantes span:nth-child(8) { --x: 48%; --y: 90%; --duracao: 12s; --atraso: -10s; }
+
+@keyframes flutuar {
+    from { transform: translate3d(-8px, 14px, 0) rotate(-18deg); }
+    to { transform: translate3d(8px, -22px, 0) rotate(18deg); }
+}
+
+@media (max-width: 480px) {
+    .meias-flutuantes span {
+        opacity: 0.1;
+    }
+
+    .meias-flutuantes span:nth-child(7),
+    .meias-flutuantes span:nth-child(8) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .meias-flutuantes span {
+        animation: none;
+    }
+}

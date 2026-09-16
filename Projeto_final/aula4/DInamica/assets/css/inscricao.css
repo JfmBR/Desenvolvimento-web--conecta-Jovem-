@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 48px 24px;
+    background: radial-gradient(circle at top left, #e0e7ff, transparent 55%),
+        linear-gradient(135deg, #f8fafc, #ede9fe);
+    color: #292442;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    max-width: 800px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+header::before {
+    content: "🧦";
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 28px;
+    border: 1px solid #d8d1ef;
+    border-radius: 28px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 32px #43387812;
+    font-size: 48px;
+    transform: rotate(-8deg);
+}
+
+header h1 {
+    margin-bottom: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+header > p {
+    color: #5c5572;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 595px;
+    margin: 0 auto;
+    padding: 28px;
+    border: 1px solid #ded8ee;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 16px 40px #4338780d;
+}
+
+#cima {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.grupo-input {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+label,
+#baixo legend {
+    color: #5c5572;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+#nome,
+#contato,
+form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d8d1e8;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    color: #292442;
+}
+
+form textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #655e77;
+    opacity: 1;
+}
+
+#baixo {
+    border: 0;
+    min-width: 0;
+    align-self: flex-start;
+}
+
+#baixo legend {
+    margin-bottom: 8px;
+}
+
+#baixo input {
+    margin: 0 16px 0 4px;
+    accent-color: #6546ad;
+}
+
+#baixo label,
+#baixo input {
+    cursor: pointer;
+}
+
+form button {
+    align-self: flex-end;
+    min-height: 48px;
+    padding: 12px 28px;
+    border: 0;
+    border-radius: 12px;
+    background-color: #6546ad;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+form button:hover {
+    background-color: #50358e;
+    transform: translateY(-2px);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid #50358e;
+    outline-offset: 0px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 36px 20px 20px;
+    }
+
+    form {
+        padding: 22px 18px;
+    }
+
+    #cima {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    form button {
+        transition: none;
+    }
+
+    form button:hover {
+        transform: none;
+    }
+}
+
+/* Mantém o estilo existente nos novos elementos semânticos. */
+.campo-poema {
+    width: 100%;
+}
+
+form > a {
+    color: #6546ad;
+}
+
+form > a:focus-visible {
+    outline: 3px solid #50358e;
+    outline-offset: 4px;
+}
+
+/* Popup com a mesma paleta e os mesmos acabamentos do formulário. */
+#confirmacao-envio {
+    width: calc(100% - 40px);
+    max-width: 480px;
+    max-height: calc(100svh - 40px);
+    margin: auto;
+    padding: 28px;
+    border: 1px solid #ded8ee;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #292442;
+    box-shadow: 0 16px 40px #43387826;
+    text-align: center;
+}
+
+#confirmacao-envio::backdrop {
+    background-color: #29244280;
+}
+
+#confirmacao-envio h2 {
+    margin-bottom: 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+#confirmacao-envio p {
+    color: #5c5572;
+}
+
+#fechar-confirmacao {
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 12px 28px;
+    border: 0;
+    border-radius: 12px;
+    background-color: #6546ad;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#fechar-confirmacao:hover {
+    background-color: #50358e;
+}
